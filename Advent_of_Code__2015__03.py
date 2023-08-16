@@ -3,11 +3,6 @@
 # @ Polymer Competence Center Leoben GmbH on the 2023-08-16
 # =========================================================================================
 
-# =========================================================================================
-# The file Advent_of_Code__2015__02.py was created by Johannes Macher
-# @ Polymer Competence Center Leoben GmbH on the 2023-08-16
-# =========================================================================================
-
 # Task 03 - Part 1
 """
 Santa is delivering presents to an infinite two-dimensional grid of houses.
