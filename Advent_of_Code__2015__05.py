@@ -83,8 +83,25 @@ for string in naughty_and_good_strings:
         nice_counter += 1
 
 print("\n")
-print("Number of nice strings: ", nice_counter)
+print("Part 1: Number of nice strings: ", nice_counter)
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Part 1
+# from Narimiran (GitHub)
+data = open(load_path).read().splitlines()
+
+is_nice_1 = lambda s: (
+    sum(c in "aeiou" for c in s) >= 3
+    and any(a == b for a, b in zip(s, s[1:]))
+    and all(f not in s for f in ("ab", "cd", "pq", "xy"))
+)
+print("\n")
+print("Part 1: Number of nice strings (Narimiran): ", sum(map(is_nice_1, data)))
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Part 2
-p = re.compile(r"\b(\w+)\s+\1\b")
+# from Narimiran (GitHub)
+is_nice_2 = lambda s: (any(s[i : i + 2] in s[:i] for i in range(len(s) - 1)) and any(a == b for a, b in zip(s, s[2:])))
+
+print("Part 2: Number of nice strings (Narimiran): ", sum(map(is_nice_2, data)))
+print("\n")
