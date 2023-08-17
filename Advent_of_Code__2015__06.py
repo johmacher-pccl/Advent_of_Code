@@ -77,13 +77,11 @@ light_map = switch_lights(map(parse_line, data), light_map)
 print("\n")
 print(f"Part 1: Lights switched on: {np.sum(light_map):.0f}")
 
+
 # ----------------------------------------------------------------------------------------------------------------------
 # Part 1
 # Count brightness
 # Read data to switch out lights
-light_map = np.zeros((1000, 1000))
-
-
 def switch_brightness(data_in, light_map_in):
     for cmd, x1, x2, y1, y2 in data_in:
         if cmd == "on":
