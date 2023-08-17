@@ -73,3 +73,15 @@ for idx, item in enumerate(santa_floor_list):
 # Print character which causes Santa to be in the basement (-1)
 print(f"Character {(idx + 1):d} puts Santa in the basement.")
 print("\n")
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Part 1 & 2 solved by Narimiran
+from itertools import accumulate
+
+data = open(load_path).readline()
+
+travel = lambda acc, c: acc + (1 if c == "(" else -1)
+floors_visited = list(accumulate(data, travel, initial=0))
+
+print(floors_visited[-1])
+print(next(i for i, floor in enumerate(floors_visited) if floor < 0))
